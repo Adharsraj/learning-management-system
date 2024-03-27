@@ -2,6 +2,7 @@ require("dotenv").config();
 import { Response } from "express";
 import { IUser } from "../models/user.model";
 import { redis } from "./redis";
+import { IEmployee } from "../models/employee.model ";
 
 interface ITokenOptions {
   expires: Date;
@@ -40,7 +41,7 @@ export const refreshTokenOptions: ITokenOptions = {
 
 
 
-export const sendToken = (user: IUser, statusCode: number, res: Response) => {
+export const sendToken = (user: IEmployee, statusCode: number, res: Response) => {
   const accessToken = user.signAccessToken();
   const refreshToken = user.signRefreshToken();
   // upload session to redis to maintain cache (user login session)

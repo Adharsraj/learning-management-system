@@ -22,11 +22,5 @@ userRouter.get("/me", isAuthenticated,getUserInfo);
 userRouter.put("/update-user-info", isAuthenticated,updateUserInfo);
 userRouter.put("/update-password", isAuthenticated,updatePassword);
 userRouter.put("/update-user-avatar", isAuthenticated,updateProfilePicture);
-
-
 userRouter.post('/socialauth',socialAuth)
-
-
-
-
 export default userRouter;
